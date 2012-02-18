@@ -60,7 +60,7 @@
 		
 		function getPages() {
 			$pages = array();
-			$query = "SELECT * FROM Posts";
+			$query = "SELECT * FROM Posts ORDER BY ID DESC";
 			
 			$posts = mysql_query($query, $this->_connection);
 			
@@ -71,7 +71,7 @@
 					$page = new Page();
 					for ($j = 0; $j < 10; $j++) {
 						if ($post = mysql_fetch_assoc($posts)) {
-							$p = new Post($post["Text"]);
+							$p = new Post($post["Text"], $post["Title"]);
 							$page->addPost($p);
 						}
 						else {

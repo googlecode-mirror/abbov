@@ -2,10 +2,12 @@
 	require_once "engine/visitable.php";
 	
 	class Post implements Visitable {
+		private $_title;
 		private $_text;
 		
-		function __construct($text) {
+		function __construct($text, $title) {
 			$this->_text = $text;
+			$this->_title = $title;
 		}
 		
 		// accept(Visitor $a)
@@ -28,6 +30,10 @@
 		
 		function getText() {
 			return $this->_text;
+		}
+		
+		function getTitle() {
+			return $this->_title;
 		}
 	}
 ?>
