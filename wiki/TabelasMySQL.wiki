@@ -7,7 +7,9 @@ Apesar do motor do ABBOV não utilizar as tabelas MySQL directamente, porque a c
 
 Como tal, o ABBOV vai buscar os seus dados a estas tabelas, desde que estas estejam estruturadas da forma correcta.
 
-= Posts =
+= Tabelas =
+
+== Posts ==
 
 A tabela Posts é onde o ABBOV armazena a informação relativa aos posts do blog. Esta tabela deve conter 2 colunas: a coluna ID (apenas utilizada para manter uma ordem nos posts) e a coluna Text (coluna dos textos dos posts, codificada em latin1_swedish_ci).
 
