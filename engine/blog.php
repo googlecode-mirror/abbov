@@ -45,6 +45,11 @@
 		function getPages() {
 			return $this->_pages;
 		}
+		
+		function getPage($id) {
+			$page = $id - 1;
+			return $this->_pages[$page];
+		}
 	}
 	
 ?>
