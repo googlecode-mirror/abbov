@@ -1,0 +1,14 @@
+#summary Estrutura das tabelas MySQL usadas pelo ABBOV.
+#labels mysql,tabela,Phase-Implementation
+
+= Introdução =
+
+Apesar do motor do ABBOV não utilizar as tabelas MySQL directamente, porque a classe Database permite obter a informação na forma dos objectos utilizados directamente pelo motor, a informação é armazenada em tabelas MySQL.
+
+Como tal, o ABBOV vai buscar os seus dados a estas tabelas, desde que estas estejam estruturadas da forma correcta.
+
+= Posts =
+
+A tabela Posts é onde o ABBOV armazena a informação relativa aos posts do blog. Esta tabela deve conter 2 colunas: a coluna ID (apenas utilizada para manter uma ordem nos posts) e a coluna Text (coluna dos textos dos posts, codificada em latin1_swedish_ci).
+
+Tanto a tabela como as colunas têm que ter estes nomes para que funcionem de origem no ABBOV. Caso estes não sejam os nomes utilizados, os nomes da tabela têm que ser modificados no ficheiro engine/database.php. 
