@@ -1,6 +1,6 @@
 <?php
 
-	// Necessary includes for Blog class
+	// Required classes for Blog
 	require_once "engine/visitable.php";
 	require_once "engine/database.php";
 	require_once "engine/page.php";
@@ -13,7 +13,10 @@
 		// Creates a new Database object, connects to the database server and selects the database
 		// Queries the database for pages
 		//
-		// Doesn't receive information
+		// $user - the username of the MySQL server
+		// $pass - the password of the MySQL server
+		// $addr - the address of the MySQL server
+		// $data - the database in the MySQL server
 		//
 		// Doesn't return information
 		
@@ -45,6 +48,13 @@
 		function getPages() {
 			return $this->_pages;
 		}
+		
+		// getPage($id)
+		// Returns a specific blog page
+		//
+		// $id - the number of the blog page requested
+		//
+		// Returns a page
 		
 		function getPage($id) {
 			$page = $id - 1;

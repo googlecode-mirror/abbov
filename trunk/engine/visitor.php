@@ -1,4 +1,6 @@
 <?php
+
+	// Required classes for Visitor
 	require_once "engine/blog.php";
 	require_once "engine/page.php";
 	require_once "engine/post.php";

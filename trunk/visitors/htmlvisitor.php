@@ -9,7 +9,14 @@
 	
 	class HTMLVisitor implements Visitor {
 	
-		private $_rootfolder;
+		private $_rootfolder; // Folder where ABBOV is running
+		
+		// __construct($rf): Executed when object is created
+		// Fills the internal variables with the given values
+		//
+		// $rf - folder where ABBOV is running
+		//
+		// Doesn't return information
 		
 		function __construct($rf) {
 			$this->_rootfolder = $rf;
