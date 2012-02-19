@@ -9,6 +9,12 @@
 	
 	class HTMLVisitor implements Visitor {
 	
+		private $_rootfolder;
+		
+		function __construct($rf) {
+			$this->_rootfolder = $rf;
+		}
+	
 		// visitBlog(Blog $b)
 		// Displays the content of a Blog
 		//
@@ -19,7 +25,9 @@
 		function visitBlog(Blog $b) {
 			$pages = $b->getPages();
 			
-			echo "<html><head><title>ABBOV TEST</title></head><body>";
+			echo "<html><head><title>ABBOV TEST</title>";
+			echo '<link rel="alternate" type="application/rss+xml" title="RSS" href="http://' . $_SERVER['SERVER_ADDR'] . $this->_rootfolder . 'rss.php">';
+			echo "</head><body>";
 			
 			foreach ($pages as $pa) {
 				$pa->accept($this);

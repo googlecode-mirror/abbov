@@ -10,9 +10,11 @@
 	class PageVisitor implements Visitor {
 
 		private $_id;
+		private $_rootfolder;
 		
-		function __construct($id) {
+		function __construct($id, $rf) {
 			$this->_id = $id;
+			$this->_rootfolder = $rf;
 		}
 		
 		// visitBlog(Blog $b)
@@ -25,7 +27,9 @@
 		function visitBlog(Blog $b) {
 			$page = $b->getPage($this->_id);
 
-			echo "<html><head><title>ABBOV TEST</title></head><body>";
+			echo "<html><head><title>ABBOV TEST</title>";
+			echo '<link rel="alternate" type="application/rss+xml" title="RSS" href="http://' . $_SERVER['SERVER_ADDR'] . $this->_rootfolder . 'rss.php">';
+			echo "</head><body>";
 
 			$page->accept($this);
 

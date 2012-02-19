@@ -4,7 +4,7 @@
 	include "settings/globalvars.php";
 	
 	$blog = new Blog($GLOB_username, $GLOB_password, $GLOB_server, $GLOB_database);
-	$visitor = new HTMLVisitor();
+	$visitor = new HTMLVisitor($GLOB_folder);
 	
 	$blog->accept($visitor);
 ?>
