@@ -1,0 +1,10 @@
+#summary UML Diagram of the ABBOV classes.
+#labels Phase-Implementation,UML,Classes
+
+= Visitable Family =
+
+[http://f.cl.ly/items/3e422y3N2N2n3Q2h2T02/Screen%20Shot%202012-02-19%20at%2011.57.08.png]
+
+= Visitor Family =
+
+[http://f.cl.ly/items/401K1a0m242t1v1D2B1r/Screen%20Shot%202012-02-19%20at%2012.02.32.png]
