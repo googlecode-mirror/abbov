@@ -1,14 +1,16 @@
 <?php
 
-	// Required classes for blog's index
+	// Required classes for the RSS demo
 	require_once "engine/blog.php";
 	require_once "visitors/rssvisitor.php";
 
-	// Blog's settings
+	// Settings
 	include "settings/globalvars.php";
 
+	// Creates a new Blog and a new Visitor
 	$blog = new Blog($GLOB_username, $GLOB_password, $GLOB_server, $GLOB_database);
 	$visitor = new RSSVisitor();
 
+	// Creates the RSS feed
 	$blog->accept($visitor);
 ?>

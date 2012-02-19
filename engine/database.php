@@ -1,5 +1,6 @@
 <?php
 
+	// Required classes for Database
 	require_once "engine/page.php";
 	require_once "engine/post.php";
 	
