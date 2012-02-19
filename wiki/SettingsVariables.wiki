@@ -1,5 +1,5 @@
 #summary Description of the settings variables.
-#labels Settings,Files,Phase-Implementation,Featured
+#labels Settings,Files,Phase-Implementation
 
 = settings/globalvars.php =
 
