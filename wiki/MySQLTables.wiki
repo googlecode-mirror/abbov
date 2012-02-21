@@ -19,9 +19,11 @@ Both the table as the columns need to have this names so they can work with ABBO
 
 = SQL Command =
 
+This commands are here for demonstration purposes only. It is recommended that you run the installation script (install.php) instead of creating the database and tables manually.
+
 {{{
-CREATE DATABASE `ABBOV_TEST` ;
-CREATE TABLE `ABBOV_TEST`.`Posts` (
+CREATE DATABASE `abbov` ;
+CREATE TABLE `abbov`.`Posts` (
 `ID` INT NOT NULL AUTO_INCREMENT ,
 `Title` TEXT NOT NULL ,
 `Text` TEXT NOT NULL ,
