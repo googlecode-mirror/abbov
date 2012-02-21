@@ -6,18 +6,24 @@
 	class Post implements Visitable {
 		private $_title; // Title of the post
 		private $_text; // Text of the post
+		private $_author; // Author of the post
+		private $_time; // Time of the post
 		
 		// __construct($text, $title): executed when object is created
 		// Fills the internal variables with the given values
 		//
 		// $text - the post text
 		// $title - the post title
+		// $author - the post author
+		// $time - the post time
 		//
 		// Doesn't return information
 		
-		function __construct($text, $title) {
+		function __construct($text, $title, $author, $time) {
 			$this->_text = $text;
 			$this->_title = $title;
+			$this->_author = $author;
+			$this->_time = $time;
 		}
 		
 		// accept(Visitor $a)
@@ -51,6 +57,28 @@
 		
 		function getTitle() {
 			return $this->_title;
+		}
+		
+		// getTitle()
+		// Returns the post title
+		//
+		// Doesn't receive information
+		//
+		// Returns a string
+		
+		function getAuthor() {
+			return $this->_author;
+		}
+		
+		// getTime()
+		// Returns the post title
+		//
+		// Doesn't receive information
+		//
+		// Returns an integer
+		
+		function getTime() {
+			return $this->_time;
 		}
 	}
 ?>

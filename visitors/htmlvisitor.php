@@ -72,10 +72,14 @@
 		function visitPost(Post $p) {
 			$text = $p->getText();
 			$title = $p->getTitle();
+			$author = $p->getAuthor();
+			$time = $p->getTime();
 			
 			echo '<div id="post">';
-			echo '<h3>'.$title.'</h3>';
+			echo '<b>'.$title."</b><br>";
+			echo $author.' @ '.date("H:i:s - d/m/Y", $time).'<br><br>';
 			echo $text;
+			echo "<br><br>";
 			echo '</div>';
 			
 		}

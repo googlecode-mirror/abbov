@@ -24,6 +24,8 @@
 			echo '<channel>';
 			
 			echo '<title>ABBOV TEST</title>';
+			echo '<link>http://192.168.1.69/abbov/</link>';
+			echo '<description>ABBOV test page</description>';
 			echo '<language>pt-pt</language>';
 
 			foreach ($pages as $pa) {
@@ -59,12 +61,15 @@
 		function visitPost(Post $p) {
 			$text = $p->getText();
 			$title = $p->getTitle();
+			$author = $p->getAuthor();
+			$time = $p->getTime();
 
 			echo '<item>';
 			
 			echo '<title>' . utf8_encode($title) . '</title>';
 			echo '<description>' . utf8_encode($text) . '</description>';
-			
+			echo '<pubDate>'.date("D, d M Y G:i:s O", $time).'</pubDate>';
+			echo '<author>'.$author.'</author>';
 			echo '</item>';
 		}
 	}
