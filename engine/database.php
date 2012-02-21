@@ -68,17 +68,31 @@
 			$np = mysql_num_rows($posts);
 			
 			if ($np > 0) {
+			
 				for ($i = 0; $i < $np; $i++) {
 					$page = new Page();
+					
 					for ($j = 0; $j < 10; $j++) {
+					
 						if ($post = mysql_fetch_assoc($posts)) {
-							$p = new Post($post["Text"], $post["Title"], $post['Author'], $post['Time']);
+						
+							$tags = $post['Tags'];
+							
+							if ($tags == "") {
+								$tags = 'a:1:{i:0;s:0:"";}';
+							}
+							
+							$p = new Post($post["Text"], $post["Title"], $post['Author'], $post['Time'], unserialize($tags));
+							
 							$page->addPost($p);
+							
 						}
+						
 						else {
 							break;
 						}
 					}
+					
 					$pages[] = $page;
 					if ($post == NULL) break;
 				}

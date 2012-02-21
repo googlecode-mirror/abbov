@@ -8,6 +8,7 @@
 		private $_text; // Text of the post
 		private $_author; // Author of the post
 		private $_time; // Time of the post
+		private $_tags; // Tags of the post
 		
 		// __construct($text, $title): executed when object is created
 		// Fills the internal variables with the given values
@@ -16,14 +17,16 @@
 		// $title - the post title
 		// $author - the post author
 		// $time - the post time
+		// $tags - the post tags
 		//
 		// Doesn't return information
 		
-		function __construct($text, $title, $author, $time) {
+		function __construct($text, $title, $author, $time, $tags) {
 			$this->_text = $text;
 			$this->_title = $title;
 			$this->_author = $author;
 			$this->_time = $time;
+			$this->_tags = $tags;
 		}
 		
 		// accept(Visitor $a)
@@ -79,6 +82,17 @@
 		
 		function getTime() {
 			return $this->_time;
+		}
+		
+		// getTags()
+		// Returns the post tags
+		//
+		// Doesn't receive information
+		//
+		// Returns an array of string
+		
+		function getTags() {
+			return $this->_tags;
 		}
 	}
 ?>
