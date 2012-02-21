@@ -16,3 +16,18 @@ The Posts table is where ABBOV stores information related to the blog posts. Thi
 = Important Information =
 
 Both the table as the columns need to have this names so they can work with ABBOV without modifications. If you want to use other names you'll have to change the names of the tables and the fields in engine/database.php. This is not a supported operation and you won't find any instructions.
+
+= SQL Command =
+
+{{{
+CREATE DATABASE `ABBOV_TEST` ;
+CREATE TABLE `ABBOV_TEST`.`Posts` (
+`ID` INT NOT NULL AUTO_INCREMENT ,
+`Title` TEXT NOT NULL ,
+`Text` TEXT NOT NULL ,
+`Author` TEXT NOT NULL ,
+`Time` INT NOT NULL ,
+`Tags` TEXT NOT NULL ,
+PRIMARY KEY ( `ID` )
+) ENGINE = MYISAM ;
+}}}
