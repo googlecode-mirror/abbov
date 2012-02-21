@@ -6,10 +6,16 @@
 	
 	// Settings
 	include "settings/globalvars.php";
+	
+	// Page ID
+	$id = $_GET['page'];
 
 	// Creates a new Blog and a new Visitor
 	$blog = new Blog($GLOB_username, $GLOB_password, $GLOB_server, $GLOB_database);
-	$visitor = new PageVisitor($_GET['page'], $GLOB_folder);
+	$visitor = new PageVisitor($GLOB_folder);
+	
+	// Set page to visit
+	if ($id != 0) $visitor->setPage($id);
 
 	// Displays the page
 	$blog->accept($visitor);
