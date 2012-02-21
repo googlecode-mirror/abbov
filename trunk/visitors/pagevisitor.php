@@ -9,8 +9,16 @@
 
 	class PageVisitor implements Visitor {
 
-		private $_id;
-		private $_rootfolder;
+		private $_id; // ID of the page
+		private $_rootfolder; // Folder where ABBOV is running
+		
+		// __construct($id, $rf): Executed when object is created
+		// Fills the internal variables with the given values
+		//
+		// $id - ID of the requested page
+		// $rf - folder where ABBOV is running
+		//
+		// Doesn't return information
 		
 		function __construct($id, $rf) {
 			$this->_id = $id;

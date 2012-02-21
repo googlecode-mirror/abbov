@@ -72,7 +72,7 @@
 					$page = new Page();
 					for ($j = 0; $j < 10; $j++) {
 						if ($post = mysql_fetch_assoc($posts)) {
-							$p = new Post($post["Text"], $post["Title"]);
+							$p = new Post($post["Text"], $post["Title"], $post['Author'], $post['Time']);
 							$page->addPost($p);
 						}
 						else {
