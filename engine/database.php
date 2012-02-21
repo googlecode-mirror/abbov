@@ -100,5 +100,27 @@
 			
 			return $pages;
 		}
+		
+		// createStructures($database)
+		// Creates the database and tables for abbov
+		//
+		// $database - the name of the database
+		//
+		// Doesn't return information
+		
+		function createStructures($database) {
+			$query = "CREATE DATABASE `".$database."` ;"
+			$query .= "CREATE TABLE `".$database."`.`Posts` (";
+			$query .= "`ID` INT NOT NULL AUTO_INCREMENT ,";
+			$query .= "`Title` TEXT NOT NULL ,";
+			$query .= "`Text` TEXT NOT NULL ,";
+			$query .= "`Author` TEXT NOT NULL ,";
+			$query .= "`Time` INT NOT NULL ,";
+			$query .= "`Tags` TEXT NOT NULL ,";
+			$query .= "PRIMARY KEY ( `ID` )";
+			$query .= ") ENGINE = MYISAM ;"
+			
+			$posts = mysql_query($query, $this->_connection);
+		}
 	}
 ?>
