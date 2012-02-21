@@ -85,14 +85,36 @@
 			$title = $p->getTitle();
 			$author = $p->getAuthor();
 			$time = $p->getTime();
-
+			$tags = $this->tagsToString($p->getTags());
+			
 			echo '<div id="post">';
 			echo '<b>'.$title."</b><br>";
-			echo $author.' @ '.date("H:i:s - d/m/Y", $time).'<br><br>';
+			echo $author.' @ '.date("H:i:s - d/m/Y", $time).'<br>';
+			echo 'Tags: '.$tags.'<br><br>';
 			echo $text;
 			echo "<br><br>";
 			echo '</div>';
-
+			
+		}
+		
+		// tagsToString($tagsArray) 
+		// Converts an array of tags into a string
+		//
+		// $tagsArray - an array of strings (tags)
+		//
+		// Returns a string of tags
+		
+		function tagsToString($tagsArray) {
+			$tags = "";
+			
+			for ($i = 0; $i < sizeof($tagsArray); $i++) {
+				$tags .= $tagsArray[$i];
+				if ($i < (sizeof($tagsArray) - 1)) {
+					$tags .= ", ";
+				}
+			}
+			
+			return $tags;
 		}
 	}
 ?>

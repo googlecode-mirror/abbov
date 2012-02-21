@@ -60,13 +60,35 @@
 			$title = $p->getTitle();
 			$author = $p->getAuthor();
 			$time = $p->getTime();
+			$tags = $this->tagsToString($p->getTags());
 			
 			echo '<post>';
 			echo '<title>' . utf8_encode($title) . '</title>';
 			echo '<author>' . utf8_encode($author) . '</author>';
 			echo '<time>' . utf8_encode(date("H:i:s - d/m/Y", $time)) . '</time>';
+			echo '<tags>' . utf8_encode($tags) . '</tags>';
 			echo '<text>' . utf8_encode($text) . '</text>';
 			echo '</post>';
+		}
+		
+		// tagsToString($tagsArray) 
+		// Converts an array of tags into a string
+		//
+		// $tagsArray - an array of strings (tags)
+		//
+		// Returns a string of tags
+		
+		function tagsToString($tagsArray) {
+			$tags = "";
+			
+			for ($i = 0; $i < sizeof($tagsArray); $i++) {
+				$tags .= $tagsArray[$i];
+				if ($i < (sizeof($tagsArray) - 1)) {
+					$tags .= ", ";
+				}
+			}
+			
+			return $tags;
 		}
 	}
 ?>
