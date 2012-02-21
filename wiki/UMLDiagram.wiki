@@ -1,5 +1,5 @@
 #summary UML Diagram of the ABBOV classes.
-#labels Phase-Implementation,UML,Classes
+#labels Phase-Implementation,UML,Classes,Deprecated
 
 = Visitable Family =
 
