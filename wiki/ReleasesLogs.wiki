@@ -29,3 +29,11 @@
 * Includes 4 demo pages (index.php, xml.php, page.php and rss.php)
 
 * Modified HTMLVisitor to include RSS headers for rss.php
+
+
+== Pre-Developer Preview #3 ==
+
+
+* Extends the API for Visitors with Author and Time
+
+* Updated all demo Visitors to the latest API.
