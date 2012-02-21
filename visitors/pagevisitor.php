@@ -15,14 +15,24 @@
 		// __construct($id, $rf): Executed when object is created
 		// Fills the internal variables with the given values
 		//
-		// $id - ID of the requested page
 		// $rf - folder where ABBOV is running
 		//
 		// Doesn't return information
 		
-		function __construct($id, $rf) {
-			$this->_id = $id;
+		function __construct($rf) {
+			$this->_id = 1;
 			$this->_rootfolder = $rf;
+		}
+		
+		// setPage($id)
+		// Sets the page ID to visualize
+		//
+		// $id - ID of the requested page
+		//
+		// Doesn't return information
+		
+		function setPage($id) {
+			$this->_id = $id;
 		}
 		
 		// visitBlog(Blog $b)
@@ -73,10 +83,14 @@
 		function visitPost(Post $p) {
 			$text = $p->getText();
 			$title = $p->getTitle();
+			$author = $p->getAuthor();
+			$time = $p->getTime();
 
 			echo '<div id="post">';
-			echo '<h3>'.$title.'</h3>';
+			echo '<b>'.$title."</b><br>";
+			echo $author.' @ '.date("H:i:s - d/m/Y", $time).'<br><br>';
 			echo $text;
+			echo "<br><br>";
 			echo '</div>';
 
 		}

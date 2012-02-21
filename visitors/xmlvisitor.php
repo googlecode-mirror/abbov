@@ -57,8 +57,14 @@
 		
 		function visitPost(Post $p) {
 			$text = $p->getText();
+			$title = $p->getTitle();
+			$author = $p->getAuthor();
+			$time = $p->getTime();
 			
 			echo '<post>';
+			echo '<title>' . utf8_encode($title) . '</title>';
+			echo '<author>' . utf8_encode($author) . '</author>';
+			echo '<time>' . utf8_encode(date("H:i:s - d/m/Y", $time)) . '</time>';
 			echo '<text>' . utf8_encode($text) . '</text>';
 			echo '</post>';
 		}
