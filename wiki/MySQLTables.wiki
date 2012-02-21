@@ -11,7 +11,7 @@ So, ABBOV gets it's data from this tables, but they must be structured in the co
 
 == Posts ==
 
-The Posts table is where ABBOV stores information related to the blog posts. This table should contain 3 columns: the ID column (only used to keep the order of the posts, should be INT and auto increment), the Text column (where is stored the post text) and the Title column (where is stored the post title). Both text columns need to be encoded in latin1_swedish_ci.
+The Posts table is where ABBOV stores information related to the blog posts. This table should contain 5 columns: the ID column (only used to keep the order of the posts, should be INT and auto increment), the Text column (where is stored the post text), the Title column (where is stored the post title) and the Author column (where is stored the author of the post). All text columns need to be encoded in latin1_swedish_ci. Finally, the table should contain the Time column in INT format (it uses UNIX time).
 
 = Important Information =
 
