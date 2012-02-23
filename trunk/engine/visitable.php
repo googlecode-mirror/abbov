@@ -1,5 +1,4 @@
 <?php
-
 	// Required classes for Visitable
 	require_once "engine/visitor.php";
 	
