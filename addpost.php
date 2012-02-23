@@ -9,11 +9,13 @@
 	$blog = new Blog($GLOB_username, $GLOB_password, $GLOB_server, $GLOB_database);
 
 	// Post variables
-	$title = "This is a test post!";
-	$text = "With this post we want to see if we can insert a post via the new insert API.";
-	$author = "testprogram";
-	$tags = array("test", "post", "api");
+	$title = $_POST['title'];
+	$text = $_POST['text'];
+	$author = $_POST['author'];
+	$tags = split(", ", $_POST['tags']);
 
 	// Adds a new post
 	$blog->newPost($title, $text, $author, $tags);
+	
+	header('Location:index.php');
 ?>
