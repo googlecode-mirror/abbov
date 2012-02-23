@@ -3,6 +3,7 @@
 	require_once "engine/visitable.php";
 	require_once "engine/database.php";
 	require_once "engine/page.php";
+	require_once "engine/post.php";
 	
 	class Blog implements Visitable {
 		private $_db; // Blog's database represented by the Database class
@@ -58,6 +59,11 @@
 		function getPage($id) {
 			$page = $id - 1;
 			return $this->_pages[$page];
+		}
+		
+		function newPost($title, $text, $author, $tags) {
+			$p = new Post($text, $title, $author, time(), $tags);
+			$this->_db->addPost($p);
 		}
 	}
 	
