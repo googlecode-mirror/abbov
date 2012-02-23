@@ -1,5 +1,4 @@
 <?php
-
 	// Required classes for Page Demo
 	require_once "engine/blog.php";
 	require_once "visitors/pagevisitor.php";

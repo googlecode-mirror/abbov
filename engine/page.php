@@ -1,5 +1,4 @@
 <?php
-
 	// Required classes for Page
 	require_once "engine/visitable.php";
 	require_once "engine/post.php";

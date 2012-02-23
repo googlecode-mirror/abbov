@@ -1,5 +1,4 @@
 <?php
-
 	// Required classes for the XML demo
 	require_once "engine/blog.php";
 	require_once "visitors/xmlvisitor.php";

@@ -1,5 +1,4 @@
 <?php
-
 	// Required classes for HTML Visitor
 	require_once "engine/visitor.php";
 	require_once "engine/visitable.php";

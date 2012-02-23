@@ -1,5 +1,4 @@
 <?php
-
 	// Required classes for Blog
 	require_once "engine/visitable.php";
 	require_once "engine/database.php";

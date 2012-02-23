@@ -1,5 +1,4 @@
 <?php
-
 	// Required classes for the RSS demo
 	require_once "engine/blog.php";
 	require_once "visitors/rssvisitor.php";
