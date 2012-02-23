@@ -125,6 +125,13 @@
 			$posts = mysql_query($query, $this->_connection);
 		}
 		
+		// addPost(Post $p)
+		// Adds a given Post object to the database table
+		//
+		// $p - a Post object
+		//
+		// Doesn't return information
+		
 		function addPost(Post $p) {
 			$query = "INSERT INTO `".$this->_database."`.`Posts` ";
 			$query .= "(`ID`, `Title`, `Text`, `Author`, `Time`, `Tags`) ";
@@ -136,6 +143,13 @@
 			
 			$added = mysql_query($query, $this->_connection);
 		}
+		
+		// deletePost($id)
+		// Deletes a post from the database
+		//
+		// $id - the post ID
+		//
+		// Doesn't return information
 		
 		function deletePost($id) {
 			$query = "DELETE FROM `" . $this->_database. "`.`Posts` WHERE `Posts`.`ID` = " . $id;
