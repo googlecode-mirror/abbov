@@ -65,6 +65,14 @@
 			$p = new Post($text, $title, $author, time(), $tags);
 			$this->_db->addPost($p);
 		}
+		
+		function deletePost($id) {
+			$this->_db->deletePost($id);
+		}
+		
+		function rebuildPages() {
+			$this->_pages = $this->_db->getPages();
+		}
 	}
 	
 ?>
