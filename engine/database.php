@@ -135,5 +135,11 @@
 			
 			$added = mysql_query($query, $this->_connection);
 		}
+		
+		function deletePost($id) {
+			$query = "DELETE FROM `" . $this->_database. "`.`Posts` WHERE `Posts`.`ID` = " . $id;
+			
+			$deleted = mysql_query($query, $this->_connection);
+		}
 	}
 ?>
