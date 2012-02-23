@@ -74,12 +74,15 @@
 			$author = $p->getAuthor();
 			$time = $p->getTime();
 			$tags = $this->tagsToString($p->getTags());
+			$id = $p->getID();
 			
 			echo '<div id="post">';
 			echo '<b>'.$title."</b><br>";
 			echo $author.' @ '.date("H:i:s - d/m/Y", $time).'<br>';
 			echo 'Tags: '.$tags.'<br><br>';
 			echo $text;
+			echo "<br><br>";
+			echo '<a href="deletepost.php?id='.$id.'">Delete post</a>';
 			echo "<br><br>";
 			echo '</div>';
 			

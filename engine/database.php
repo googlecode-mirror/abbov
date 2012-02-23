@@ -84,6 +84,7 @@
 							}
 							
 							$p = new Post($post["Text"], $post["Title"], $post['Author'], $post['Time'], unserialize($tags));
+							$p->setID($post["ID"]);
 							
 							$page->addPost($p);
 							
