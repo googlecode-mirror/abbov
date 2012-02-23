@@ -37,3 +37,11 @@
 * Extends the API for Visitors with Author and Time
 
 * Updated all demo Visitors to the latest API.
+
+
+== Pre-Developer Preview #4 ==
+
+
+* Extends the Database API to include database and table creation
+
+* Includes an installation script that uses the new Database API
