@@ -11,6 +11,7 @@
 	// Delete Post Variables
 	$id = $_GET['id'];
 	
+	// Deletes the post
 	$blog->deletePost($id);
 	
 	// Redirect to Index

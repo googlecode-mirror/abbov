@@ -61,14 +61,39 @@
 			return $this->_pages[$page];
 		}
 		
+		
+		// newPost($title, $text, $author, $tags)
+		// Adds a new post to the blog's database
+		//
+		// $title - the title of the post
+		// $text - the text of the post
+		// $author - the author of the post
+		// $tags - the tags of the post (in an array form)
+		//
+		//Doesn't return information
+		
 		function newPost($title, $text, $author, $tags) {
 			$p = new Post($text, $title, $author, time(), $tags);
 			$this->_db->addPost($p);
 		}
 		
+		// deletePost($id)
+		// Deletes a post from the blog's database
+		//
+		// $id - the post ID
+		//
+		// Doesn't return information
+		
 		function deletePost($id) {
 			$this->_db->deletePost($id);
 		}
+		
+		// rebuildPages()
+		// Rebuilds the page index
+		//
+		// Doesn't receive information
+		//
+		// Doesn't return information
 		
 		function rebuildPages() {
 			$this->_pages = $this->_db->getPages();

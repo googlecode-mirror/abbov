@@ -89,15 +89,29 @@
 		//
 		// Doesn't receive information
 		//
-		// Returns an array of string
+		// Returns an array of strings
 		
 		function getTags() {
 			return $this->_tags;
 		}
 		
+		// setID()
+		// Sets the post ID
+		//
+		// $id - the post ID
+		//
+		// Doesn't return information
+		
 		function setID($id) {
 			$this->_id = $id;
 		}
+		
+		// getID()
+		// Returns the post tags
+		//
+		// Doesn't receive information
+		//
+		// Returns an integer
 		
 		function getID() {
 			return $this->_id;
