@@ -7,6 +7,7 @@
 		private $_username; // Database server username
 		private $_password; // Database server password
 		private $_address; // Database server IP Address
+		private $_database; // Database name
 		private $_connection; // Connection object
 	
 		// __construct($user, $pass, $addr): executed when object is created
@@ -48,6 +49,7 @@
 		// Doesn't return information
 		
 		function selectDatabase($db) {
+			$this->_database = $db;
 			mysql_select_db($db, $this->_connection);
 		}
 		
@@ -108,7 +110,7 @@
 		// Doesn't return information
 		
 		function createStructures($database) {
-			$query = "CREATE DATABASE `".$database."` ;"
+			$query = "CREATE DATABASE `".$database."` ;";
 			$query .= "CREATE TABLE `".$database."`.`Posts` (";
 			$query .= "`ID` INT NOT NULL AUTO_INCREMENT ,";
 			$query .= "`Title` TEXT NOT NULL ,";
@@ -117,9 +119,21 @@
 			$query .= "`Time` INT NOT NULL ,";
 			$query .= "`Tags` TEXT NOT NULL ,";
 			$query .= "PRIMARY KEY ( `ID` )";
-			$query .= ") ENGINE = MYISAM ;"
+			$query .= ") ENGINE = MYISAM ;";
 			
 			$posts = mysql_query($query, $this->_connection);
+		}
+		
+		function addPost(Post $p) {
+			$query = "INSERT INTO `".$this->_database."`.`Posts` ";
+			$query .= "(`ID`, `Title`, `Text`, `Author`, `Time`, `Tags`) ";
+			$query .= "VALUES (NULL, '" . $p->getTitle() . "', ";
+			$query .= "'" . $p->getText() . "', ";
+			$query .= "'" . $p->getAuthor() . "', ";
+			$query .= "'" . $p->getTime() . "', ";
+			$query .= "'" . serialize($p->getTags()) . "');";
+			
+			$added = mysql_query($query, $this->_connection);
 		}
 	}
 ?>
