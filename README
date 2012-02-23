@@ -1,0 +1,75 @@
+**** INTRO ****
+
+Welcome to ABBOV - A Blog Based On Visitors!
+
+On this document you will learn what you need to run ABBOV, how to setup it and where to find extra information.
+
+**** REQUIREMENTS ****
+
+To run ABBOV, you'll need to have a working installation of the following servers and languages:
+
+* Apache (>= 2)
+* PHP (>= 5.3)
+* MySQL (>= 5)
+
+ABBOV uses the older mysql API (not the mysqli one). We cannot guarantee that it will work beyond version 5.5.21 because at any time the mysql interface can be removed.
+
+While ABBOV may run on older versions of Apache, PHP and MySQL, it is not recommended on those older versions and it won't be supported by our developers.
+
+ABBOV is a fairly simple engine and doesn't require a lot of hardware resources.
+
+**** SETUP ****
+
+First of all, edit the settings/globalvars.php with the values for your MySQL server. The description of the fields is the following:
+
+$GLOB_username is the username that ABBOV will use to access your MySQL server.
+$GLOB_password is the password for the username in $GLOB_username.
+$GLOB_server is the MySQL server where ABBOV will be stored address.
+$GLOB_database is the name of the database in the MySQL server. For a default installation leave it as it is.
+$GLOB_folder is the folder where ABBOV will be running in your web server. If your address is something like http://yourdomain.com/, the value is the default one ("/"). If it is something like http://yourdomain.com/blog/, the value should be "/blog/".
+
+We do not support subdomains at the time.
+
+In order for ABBOV to work, we recommend to run the provided installation script, install.php, to create the database and tables in your MySQL server. If you do prefer to create the structures, please refer to our MySQLTables wiki page in the project's website.
+
+**** SUPPORT ****
+
+ABBOV's support is provided by our Google Code page. There, you'll find our wiki, where there will be support information like FAQ's, and the Issues system where you can leave your suggestions, bugs or problems.
+
+**** DEVELOP ****
+
+ABBOV is a blog engine and not a blogging platform. Therefore you won't be able to do anything in a browser with only ABBOV.
+
+It's mandatory to use the provided APIs to display information on ABBOV. The developer documents are available for download as a separate package in the Downloads section of our Google Code page.
+
+**** SVN REPOSITORY ****
+
+ABBOV has a public SVN repository where you can find the latest stage of development, most of the times more advanced that the current release.
+
+If you want to download ABBOV from the SVN repository just follow the instructions in our Source page.
+
+**** LICENSE ****
+
+ABBOV is an open source project, licensed under the New BSD License. This means that the source code is released and can be modified as long as the copyright notice is kept. This license also allows redistributions of our source code under the same condition.
+
+This project is also released as a freeware for both personal and commercial use, meaning you won't have to pay to use it.
+
+*** BSD LICENSE ***
+
+Copyright (c) 2012, Afonso Garcia
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+**** LINKS ****
+
+Google Code page: https://code.google.com/p/abbov/
+Downloads page: https://code.google.com/p/abbov/downloads/
+Source page: http://code.google.com/p/abbov/source/checkout
+Wiki: http://code.google.com/p/abbov/w/list
+Issues: http://code.google.com/p/abbov/issues/list
