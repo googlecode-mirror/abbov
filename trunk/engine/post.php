@@ -8,6 +8,7 @@
 		private $_author; // Author of the post
 		private $_time; // Time of the post
 		private $_tags; // Tags of the post
+		private $_id; // ID of the post
 		
 		// __construct($text, $title): executed when object is created
 		// Fills the internal variables with the given values
@@ -92,6 +93,14 @@
 		
 		function getTags() {
 			return $this->_tags;
+		}
+		
+		function setID($id) {
+			$this->_id = $id;
+		}
+		
+		function getID() {
+			return $this->_id;
 		}
 	}
 ?>
