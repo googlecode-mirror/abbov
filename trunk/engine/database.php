@@ -140,7 +140,7 @@
 			$query .= "'" . $p->getAuthor() . "', ";
 			$query .= "'" . $p->getTime() . "', ";
 			$query .= "'" . serialize($p->getTags()) . "');";
-			
+						
 			$added = mysql_query($query, $this->_connection);
 		}
 		
