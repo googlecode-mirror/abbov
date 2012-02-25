@@ -28,8 +28,6 @@ $GLOB_server is the MySQL server where ABBOV will be stored address.
 $GLOB_database is the name of the database in the MySQL server. For a default installation leave it as it is.
 $GLOB_folder is the folder where ABBOV will be running in your web server. If your address is something like http://yourdomain.com/, the value is the default one ("/"). If it is something like http://yourdomain.com/blog/, the value should be "/blog/".
 
-We do not support subdomains at the time.
-
 In order for ABBOV to work, we recommend to run the provided installation script, install.php, to create the database and tables in your MySQL server. If you do prefer to create the structures, please refer to our MySQLTables wiki page in the project's website.
 
 **** SUPPORT ****
