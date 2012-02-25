@@ -8,6 +8,19 @@
 
 	class RSSVisitor implements Visitor {
 
+		private $_rootfolder; // Folder where ABBOV is running
+		
+		// __construct($rf): Executed when object is created
+		// Fills the internal variables with the given values
+		//
+		// $rf - folder where ABBOV is running
+		//
+		// Doesn't return information
+		
+		function __construct($rf) {
+			$this->_rootfolder = $rf;
+		}
+	
 		// visitBlog(Blog $b)
 		// Displays the content of a Blog
 		//
@@ -23,7 +36,7 @@
 			echo '<channel>';
 			
 			echo '<title>ABBOV TEST</title>';
-			echo '<link>http://192.168.1.69/abbov/</link>';
+			echo '<link>http://' . $_SERVER['SERVER_NAME'] . $this->_rootfolder . '</link>';
 			echo '<description>ABBOV test page</description>';
 			echo '<language>pt-pt</language>';
 
