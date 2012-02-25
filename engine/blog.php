@@ -8,6 +8,7 @@
 	class Blog implements Visitable {
 		private $_db; // Blog's database represented by the Database class
 		private $_pages; // Blog's pages
+		private $_title; // Blog's title
 		
 		// __construct(): executed when object is created
 		// Creates a new Database object, connects to the database server and selects the database
@@ -25,6 +26,7 @@
 			$this->_db->connect();
 			$this->_db->selectDatabase($data);
 			$this->_pages = $this->_db->getPages();
+			$this->_title = $this->_db->getBlogTitle();
 		}
 		
 		// accept(Visitor $a)
@@ -97,6 +99,17 @@
 		
 		function rebuildPages() {
 			$this->_pages = $this->_db->getPages();
+		}
+		
+		// getTitle()
+		// Returns the blog title
+		//
+		// Doesn't receive information
+		//
+		// Returns a string
+		
+		function getTitle() {
+			return $this->_title;
 		}
 	}
 	

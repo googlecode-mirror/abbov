@@ -44,7 +44,10 @@
 		function visitBlog(Blog $b) {
 			$page = $b->getPage($this->_id);
 
-			echo "<html><head><title>ABBOV TEST</title>";
+			echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">';
+			echo "<html><head>";
+			echo '<meta http-equiv="Content-type" content="text/html;charset=ISO-8859-1">';
+			echo "<title>" . $b->getTitle() . "</title>";
 			echo '<link rel="alternate" type="application/rss+xml" title="RSS" href="http://' . $_SERVER['SERVER_NAME'] . $this->_rootfolder . 'rss.php">';
 			echo "</head><body>";
 
