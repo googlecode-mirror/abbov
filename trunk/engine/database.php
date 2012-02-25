@@ -53,6 +53,23 @@
 			mysql_select_db($db, $this->_connection);
 		}
 		
+		// getBlogTitle()
+		// Returns the blog title
+		//
+		// Doesn't receive information
+		//
+		// Returns a string
+		
+		function getBlogTitle() {
+			$query = "SELECT * FROM  `Settings` WHERE  `Setting` =  'Title'";
+			
+			$res = mysql_query($query, $this->_connection);
+			
+			$title = mysql_fetch_assoc($res);
+			
+			return $title['Value'];
+		}
+		
 		// getPages()
 		// Returns the database's Post table in Page object form
 		//

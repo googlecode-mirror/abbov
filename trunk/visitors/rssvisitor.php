@@ -30,12 +30,15 @@
 
 		function visitBlog(Blog $b) {
 			$pages = $b->getPages();
+			
+			header('Content-type: application/rss+xml');
 
 			echo '<?xml version="1.0" encoding="UTF-8"?>';
-			echo '<rss version="2.0">';
+			echo '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">';
 			echo '<channel>';
 			
-			echo '<title>ABBOV TEST</title>';
+			echo '<atom:link href="http://'. $_SERVER['SERVER_NAME'] . $this->_rootfolder . 'rss.php" rel="self" type="application/rss+xml" />';
+			echo "<title>" . $b->getTitle() . "</title>";
 			echo '<link>http://' . $_SERVER['SERVER_NAME'] . $this->_rootfolder . '</link>';
 			echo '<description>ABBOV test page</description>';
 			echo '<language>pt-pt</language>';
@@ -75,13 +78,15 @@
 			$title = $p->getTitle();
 			$author = $p->getAuthor();
 			$time = $p->getTime();
+			$id = $p->getID();
 
 			echo '<item>';
 			
+			echo '<guid isPermaLink="false">' . utf8_encode("ABBOV_ID_".$id) . '</guid>';
 			echo '<title>' . utf8_encode($title) . '</title>';
 			echo '<description>' . utf8_encode($text) . '</description>';
 			echo '<pubDate>'.date("D, d M Y G:i:s O", $time).'</pubDate>';
-			echo '<author>'.$author.'</author>';
+			echo '<dc:creator>'.$author.'</dc:creator>';
 			echo '</item>';
 		}
 	}
