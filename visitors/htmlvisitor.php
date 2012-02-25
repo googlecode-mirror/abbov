@@ -31,8 +31,11 @@
 		function visitBlog(Blog $b) {
 			$pages = $b->getPages();
 			
-			echo "<html><head><title>ABBOV TEST</title>";
-			echo '<link rel="alternate" type="application/rss+xml" title="RSS" href="http://' . $_SERVER['SERVER_ADDR'] . $this->_rootfolder . 'rss.php">';
+			echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">';
+			echo "<html><head>";
+			echo '<meta http-equiv="Content-type" content="text/html;charset=ISO-8859-1">';
+			echo "<title>ABBOV TEST</title>";
+			echo '<link rel="alternate" type="application/rss+xml" title="RSS" href="http://' . $_SERVER['SERVER_NAME'] . $this->_rootfolder . 'rss.php">';
 			echo "</head><body>";
 			
 			foreach ($pages as $pa) {
@@ -52,7 +55,7 @@
 		function visitPage(Page $p) {
 			$posts = $p->getPosts();
 			
-			echo '<div id="page">';
+			echo '<div class="page">';
 			
 			foreach ($posts as $po) {
 				$po->accept($this);
@@ -76,7 +79,7 @@
 			$tags = $this->tagsToString($p->getTags());
 			$id = $p->getID();
 			
-			echo '<div id="post">';
+			echo '<div class="post">';
 			echo '<b>'.$title."</b><br>";
 			echo $author.' @ '.date("H:i:s - d/m/Y", $time).'<br>';
 			echo 'Tags: '.$tags.'<br><br>';
